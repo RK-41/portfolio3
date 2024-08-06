@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
+import Link from 'next/link';
 
 const HeroSection = () => {
 	return (
@@ -27,10 +28,15 @@ const HeroSection = () => {
 
 					<div>
 						<button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-white hover:bg-slate-200 text-black'>
-							Hire Me
+							<Link href='#contact'>Hire Me</Link>
 						</button>
 						<button className='px-6 py-3 w-full sm:w-fit rounded-full bg-transparent  hover:bg-slate-800 text-white border border-white mt-3'>
-							Download CV
+							<Link
+								href='https://drive.google.com/file/d/1zTzQqVFEcgcHFp2CC-_tIt2cdYNf5z4B/view?usp=sharing'
+								target='_blank'
+							>
+								Download CV
+							</Link>
 						</button>
 					</div>
 				</div>

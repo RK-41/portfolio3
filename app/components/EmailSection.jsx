@@ -1,23 +1,40 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const EmailSection = () => {
-	const handleSubmit = async (data) => {
+	const [loading, setLoading] = useState(false);
+
+	const handleSubmit = async (event) => {
+		event.preventDefault();
+		setLoading(true);
+
+		const formData = {
+			name: event.target.name.value,
+			email: event.target.email.value,
+			message: event.target.message.value,
+		};
+
 		try {
 			const res = await fetch('/api/contact', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(data),
+				body: JSON.stringify(formData),
 			});
 
 			if (!res.ok) {
 				throw new Error('Something went wrong');
 			}
 
-			setSubmitted(true);
+			toast.success('Form submitted successfully!');
+			event.target.reset();
 		} catch (error) {
-			throw new Error('Something went wrong');
+			console.error('Error submitting the form:', error);
+			toast.error('Failed to submit the form. Please try again.');
+		} finally {
+			setLoading(false);
 		}
 	};
 
@@ -26,11 +43,24 @@ const EmailSection = () => {
 			className='grid md:grid-cols-2 my-8 md:my-12 py-24 gap-4'
 			id='contact'
 		>
-			<div className='z-10'>
-				<h2 className='text-4xl font-bold text-white my-4'>Let's Connect</h2>
+			<div className='absolute'>
+				<ToastContainer
+					position='top-right'
+					autoClose={5000}
+					hideProgressBar={false}
+					newestOnTop={false}
+					closeOnClick
+					rtl={false}
+					pauseOnFocusLoss
+					draggable
+					pauseOnHover
+					theme='dark'
+				/>
+			</div>
+			<div className='z-10 mb-4'>
+				<h2 className='text-4xl font-bold text-white mb-4'>Let's Connect</h2>
 				<p className='text-[#ADB7BE] mb-4 max-w-md'>
-					{' '}
-					I'm currenctly looking for new opportunities, my inbox in always open.
+					I'm currently looking for new opportunities, my inbox is always open.
 					Whether you have a question or just want to say hi, I'll try my best
 					to get back to you as soon as possible!
 				</p>
@@ -51,6 +81,21 @@ const EmailSection = () => {
 			<div>
 				<form onSubmit={handleSubmit} className='flex flex-col gap-6'>
 					<label
+						htmlFor='name'
+						className='text-white block text-sm font-medium'
+					>
+						Your Name
+					</label>
+					<input
+						type='text'
+						id='name'
+						name='name'
+						required
+						placeholder='Your Name'
+						className='bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5'
+					/>
+
+					<label
 						htmlFor='email'
 						className='text-white block text-sm font-medium'
 					>
@@ -59,22 +104,9 @@ const EmailSection = () => {
 					<input
 						type='email'
 						id='email'
+						name='email'
 						required
 						placeholder='rk@gmail.com'
-						className='bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5'
-					/>
-
-					<label
-						htmlFor='subject'
-						className='text-white block text-sm font-medium'
-					>
-						Subject
-					</label>
-					<input
-						type='text'
-						id='subject'
-						required
-						placeholder='Just saying hi.'
 						className='bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5'
 					/>
 
@@ -85,17 +117,19 @@ const EmailSection = () => {
 						Message
 					</label>
 					<textarea
-						name='message'
 						id='message'
+						name='message'
+						required
 						className='bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5'
 						placeholder="Let's talk about..."
 					/>
 
 					<button
 						type='submit'
+						disabled={loading}
 						className='bg-purple-500 hover:bg-purple-600 font-medium py-2.5 rounded-lg w-full'
 					>
-						Send
+						{loading ? 'Sending...' : 'Send'}
 					</button>
 				</form>
 			</div>

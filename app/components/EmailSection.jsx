@@ -129,7 +129,7 @@ const EmailSection = () => {
 					<button
 						type='submit'
 						disabled={loading}
-						className='bg-purple-500 hover:bg-purple-600 font-medium py-2.5 rounded-lg w-full'
+						className='bg-blue-500 hover:bg-blue-600 font-medium py-2.5 rounded-lg w-full'
 					>
 						{loading ? 'Sending...' : 'Send'}
 					</button>

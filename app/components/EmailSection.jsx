@@ -25,14 +25,15 @@ const EmailSection = () => {
 			});
 
 			if (!res.ok) {
-				throw new Error('Something went wrong');
+				toast.error('Something went wrong. Please try again.');
+				// throw new Error('Something went wrong');
+			} else {
+				toast.success('Message received successfully!');
+				event.target.reset();
 			}
-
-			toast.success('Form submitted successfully!');
-			event.target.reset();
 		} catch (error) {
 			console.error('Error submitting the form:', error);
-			toast.error('Failed to submit the form. Please try again.');
+			toast.error('Failed to send the message. Please try again.');
 		} finally {
 			setLoading(false);
 		}
@@ -57,6 +58,7 @@ const EmailSection = () => {
 					theme='dark'
 				/>
 			</div>
+
 			<div className='z-10 mb-4'>
 				<h2 className='text-4xl font-bold text-white mb-4'>Let's Connect</h2>
 				<p className='text-[#ADB7BE] mb-4 max-w-md'>

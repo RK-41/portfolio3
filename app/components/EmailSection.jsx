@@ -59,7 +59,7 @@ const EmailSection = () => {
 				/>
 			</div>
 
-			<div className='z-10 mb-4'>
+			<div className='mb-4'>
 				<h2 className='text-4xl font-bold text-white mb-4'>Let's Connect</h2>
 				<p className='text-[#ADB7BE] mb-4 max-w-md'>
 					I'm currently looking for new opportunities, my inbox is always open.
@@ -129,7 +129,7 @@ const EmailSection = () => {
 					<button
 						type='submit'
 						disabled={loading}
-						className='bg-purple-500 hover:bg-purple-600 font-medium py-2.5 rounded-lg w-full'
+						className='bg-blue-600 hover:bg-blue-700 font-medium py-2.5 rounded-lg w-full'
 					>
 						{loading ? 'Sending...' : 'Send'}
 					</button>

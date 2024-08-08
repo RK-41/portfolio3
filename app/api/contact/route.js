@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 export async function POST(req) {
 	if (req.method === 'POST') {
 		try {
-			const { email, subject, message } = await req.json();
+			const { name, email, message } = await req.json();
 
 			const transporter = nodemailer.createTransport({
 				host: 'smtp.gmail.com',
@@ -22,9 +22,8 @@ export async function POST(req) {
 				subject: 'Contact from portfolio',
 				html: `
                <h1>Contact Form</h1>
+               <p>Name: ${name}</p>
                <p>Work Email: ${email}</p>
-               <p>Subject: ${subject}</p>
-
                <p>Message: ${message}</p>
             `,
 			};
@@ -33,7 +32,7 @@ export async function POST(req) {
 
 			return NextResponse.json('Email has been sent successfully');
 		} catch {
-			return NextResponse.json('Failed to send emial');
+			return NextResponse.json('Failed to send the email');
 		}
 	} else {
 		return NextResponse.json('Method not allowed');

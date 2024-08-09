@@ -23,7 +23,7 @@ export async function POST(req) {
 				html: `
                <h1>Contact Form</h1>
                <p>Name: ${name}</p>
-               <p>Work Email: ${email}</p>
+               <p>Email: ${email}</p>
                <p>Message: ${message}</p>
             `,
 			};

@@ -72,13 +72,22 @@ const ProjectSection = () => {
 			<div className='w-full lg:max-w-full xl:max-w-[1100px] cursor-pointer m-auto bg-transparent'>
 				<Swiper
 					className='w-[100%] h-[480px]'
-					slidesPerView={1.4}
+					slidesPerView={1}
 					breakpoints={{
+						440: {
+							slidesPerView: 1.4,
+						},
 						540: {
+							slidesPerView: 1.8,
+						},
+						640: {
 							slidesPerView: 2,
 						},
 						1024: {
-							slidesPerView: 2.5,
+							slidesPerView: 2.8,
+						},
+						1200: {
+							slidesPerView: 3,
 						},
 					}}
 					initialSlide={1}

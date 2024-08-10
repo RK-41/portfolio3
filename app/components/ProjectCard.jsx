@@ -32,12 +32,10 @@ const ProjectCard = ({ project }) => {
 				</div>
 			</div>
 
-			<div className=' text-white rounded-b-xl bg-[#181818] py-6 px-4'>
+			<div className='h-40 text-white rounded-b-xl bg-[#181818] px-4 py-2 md:py-4'>
 				<h5 className='text-xl font-semibold mb-2'>{project.title}</h5>
 				<p className='text-[#ADB7BE] mb-2'>{project.description}</p>
-				<p className='text-[#ADB7BE] font-semibold'>
-					Tech Stack: {project.techStack}
-				</p>
+				<p className='text-[#ADB7BE] font-semibold'>🛠️: {project.techStack}</p>
 			</div>
 		</div>
 	);

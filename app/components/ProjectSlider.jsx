@@ -3,12 +3,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // swiper styles
 import 'swiper/css';
-import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
 import 'swiper/css/navigation';
-import 'swiper/css/scrollbar';
+import 'swiper/css/pagination';
 
 // required modules
-import { Pagination, Autoplay, Scrollbar, Navigation } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 // components
 import ProjectCard from '../components/ProjectCard';
@@ -16,7 +16,7 @@ import ProjectCard from '../components/ProjectCard';
 // data
 import { projectData } from '../assets';
 
-const ProjectSlider = () => {
+const ProjectSlider = ({ setProjectId }) => {
 	return (
 		<div className='w-full h-max lg:max-w-full xl:max-w-[1100px] py-2 m-auto bg-transparent'>
 			<Swiper
@@ -58,7 +58,11 @@ const ProjectSlider = () => {
 				{projectData.map((project, index) => {
 					return (
 						<SwiperSlide key={index}>
-							<ProjectCard key={project.id} project={project} />
+							<ProjectCard
+								key={project.id}
+								project={project}
+								setProjectId={setProjectId}
+							/>
 						</SwiperSlide>
 					);
 				})}

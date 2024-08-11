@@ -1,7 +1,7 @@
 // NavLink Data
 export const navLinkData = [
 	{ title: 'About', path: '/#about' },
-	{ title: 'Projects', path: '/#projects' },
+	{ title: 'Projects', path: '/projects' },
 	{ title: 'Contact', path: '/#contact' },
 ];
 

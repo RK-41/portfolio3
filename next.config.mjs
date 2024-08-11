@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 
-module.exports = {
+const nextConfig = {
+	output: 'export',
+	basePath: '/portfolio3',
+	assetPrefix: '/portfolio3/',
 	async headers() {
 		return [
 			{
@@ -14,15 +17,6 @@ module.exports = {
 			},
 		];
 	},
-};
-
-module.exports = {
-	basePath: '/portfolio3',
-	assetPrefix: '/portfolio3/',
-};
-
-const nextConfig = {
-	output: 'export',
 };
 
 export default nextConfig;

@@ -6,7 +6,6 @@ import { projectData } from '../assets';
 const Project = ({ searchParams }) => {
 	const id = searchParams[''];
 	const project = projectData.find((p) => p.id == id);
-	console.log(searchParams, project);
 
 	return (
 		<section className='h-full px-8 pt-20 text-white bg-[#121212]'>

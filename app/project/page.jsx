@@ -5,7 +5,19 @@ import { projectData } from '../assets';
 
 const Project = ({ searchParams }) => {
 	const id = searchParams[''];
+	console.log(searchParams, id);
 	const project = projectData.find((p) => p.id == id);
+
+	if (!project)
+		return (
+			<section className='h-[85vh] px-8 pt-20 text-white bg-[#121212]'>
+				<div className='h-full pt-4 pb-8 md:pb-12 sm:px-4 xl:px-16'>
+					<h2 className='text-center text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-8'>
+						404 not found!
+					</h2>
+				</div>
+			</section>
+		);
 
 	return (
 		<section className='h-full px-8 pt-20 text-white bg-[#121212]'>

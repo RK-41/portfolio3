@@ -94,7 +94,7 @@ const AboutSection = () => {
 				</h2>
 
 				{/* TABS */}
-				<div className='flex flex-col sm:flex-row justify-center items-center gap-2 mt-4 text-lg sm:text-xl rounded-lg shadow-lg p-4 shadow-black'>
+				<div className='flex flex-col sm:flex-row justify-center items-center gap-2 p-4 mt-4 text-lg sm:text-xl bg-[#181818] rounded-lg shadow-lg shadow-black'>
 					<TabButton
 						selectTab={() => handleTabChange('skills')}
 						active={tab === 'skills'}
@@ -117,7 +117,7 @@ const AboutSection = () => {
 						Experience{' '}
 					</TabButton>
 				</div>
-				<div className='h-max min-h-80 p-4 md:px-12 mt-8 rounded-lg shadow-xl font-light leading-relaxed  shadow-black'>
+				<div className='h-max min-h-80 p-4 md:px-12 mt-8 bg-[#181818] rounded-lg shadow-xl shadow-black font-light leading-relaxed'>
 					{tabData.find((t) => t.id === tab).content}
 				</div>
 			</div>

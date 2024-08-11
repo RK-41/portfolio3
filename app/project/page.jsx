@@ -7,7 +7,7 @@ const Project = ({ searchParams }) => {
 	const key = Object.keys(searchParams)[0];
 	const val = Object.values(searchParams)[0];
 	const id = key | val;
-	console.log(searchParams, key, val);
+
 	const project = projectData.find((p) => p.id == id);
 
 	if (!project)
@@ -29,7 +29,7 @@ const Project = ({ searchParams }) => {
 				</h2>
 
 				{/* Project Image */}
-				<div className='max-w-[500px] h-max max-h-[70vhs] aspect-auto m-auto rounded-xl shadow-xl shadow-black mb-8'>
+				<div className='max-w-[640px] h-max max-h-[70vhs] aspect-auto m-auto rounded-xl shadow-xl shadow-black mb-8'>
 					<img
 						src={project.image}
 						alt={project.title}

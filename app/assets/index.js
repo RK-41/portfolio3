@@ -99,10 +99,11 @@ export const projectData = [
 		title: 'Cine Flix',
 		description: 'Database for cinema related contents.',
 		features: [
-			'A comprehensive database of cinematic content.',
+			'Integration of TMDB API, a comprehensive database of cinematic content.',
 			'Search functionality.',
 			'Sidebar listing various genres to go discover contents.',
 			'Dedicated details page with embedded trailers, clips and other reccomendations.',
+			'Note: Use of VPN is recommended as TMDB API is blocked in some regions.',
 		],
 		image: '/images/projects/cineFlix1.png',
 		techStack: 'HTML, CSS, JavaScript, TMDB API',

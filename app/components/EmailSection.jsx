@@ -41,7 +41,7 @@ const EmailSection = () => {
 
 	return (
 		<section
-			className='grid md:grid-cols-2 my-8 md:my-12 py-24 gap-4'
+			className='grid md:grid-cols-2 mt-4 md:mt-6 py-12 gap-4'
 			id='contact'
 		>
 			<div className='absolute'>

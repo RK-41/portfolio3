@@ -1,16 +1,10 @@
 'use client';
-import Link from 'next/link';
 import { useState } from 'react';
 import NavLink from './NavLink';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import MenuOverlay from './MenuOverlay';
 import Logo from './Logo';
-
-const navLinks = [
-	{ title: 'About', path: '#about' },
-	{ title: 'Projects', path: '#projects' },
-	{ title: 'Contact', path: '#contact' },
-];
+import { navLinkData } from '../assets';
 
 const Navbar = () => {
 	const [navbarOpen, setNavbarOpen] = useState(false);
@@ -40,7 +34,7 @@ const Navbar = () => {
 
 				<div className='menu hidden md:block md:w-auto' id='navbar'>
 					<ul className='flex p-4 md:p-0 sm:flex-row md:space-x-8 mt-0'>
-						{navLinks.map((link, index) => (
+						{navLinkData.map((link, index) => (
 							<li key={index}>
 								<NavLink href={link.path} title={link.title} />
 							</li>
@@ -49,7 +43,7 @@ const Navbar = () => {
 				</div>
 			</div>
 
-			{navbarOpen ? <MenuOverlay links={navLinks} /> : null}
+			{navbarOpen ? <MenuOverlay links={navLinkData} /> : null}
 		</nav>
 	);
 };

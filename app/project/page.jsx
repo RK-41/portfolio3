@@ -4,8 +4,10 @@ import ProjectSlider from '../components/ProjectSlider';
 import { projectData } from '../assets';
 
 const Project = ({ searchParams }) => {
-	const id = searchParams[''];
-	console.log(searchParams, id);
+	const key = Object.keys(searchParams)[0];
+	const val = Object.values(searchParams)[0];
+	const id = key | val;
+	console.log(searchParams, key, val);
 	const project = projectData.find((p) => p.id == id);
 
 	if (!project)

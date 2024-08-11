@@ -69,7 +69,7 @@ const ProjectSection = () => {
 			</div> */}
 
 			{/* slider */}
-			<div className='w-full h-max lg:max-w-full xl:max-w-[1100px] py-2 cursor-pointer m-auto bg-transparent'>
+			<div className='w-full h-max lg:max-w-full xl:max-w-[1100px] py-2 m-auto bg-transparent'>
 				<Swiper
 					className='h-[400px] md:h-[480px]'
 					slidesPerView={1}

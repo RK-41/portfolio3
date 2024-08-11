@@ -5,7 +5,7 @@ import { FaLink } from 'react-icons/fa6';
 
 const ProjectCard = ({ project }) => {
 	return (
-		<div className='w-60 md:w-80 shadow-lg shadow-black rounded-b-xl m-auto cursor-pointer'>
+		<div className='w-60 md:w-80 shadow-lg shadow-black rounded-b-xl m-auto'>
 			<div
 				className='h-52 md:h-72 rounded-t-xl relative group'
 				style={{
@@ -32,11 +32,15 @@ const ProjectCard = ({ project }) => {
 				</div>
 			</div>
 
-			<div className='h-40 text-white rounded-b-xl bg-[#181818] px-4 py-2 md:py-4'>
-				<h5 className='text-xl font-semibold mb-2'>{project.title}</h5>
-				<p className='text-[#ADB7BE] mb-2'>{project.description}</p>
-				<p className='text-[#ADB7BE] font-semibold'>🛠️: {project.techStack}</p>
-			</div>
+			<Link href={`/project?=${project.id}`}>
+				<div className='h-40 text-white rounded-b-xl bg-[#181818] px-4 py-2 md:py-4'>
+					<h5 className='text-xl font-semibold mb-2'>{project.title}</h5>
+					<p className='text-[#ADB7BE] mb-2'>{project.description}</p>
+					<p className='text-[#ADB7BE] font-semibold'>
+						🛠️: {project.techStack}
+					</p>
+				</div>
+			</Link>
 		</div>
 	);
 };

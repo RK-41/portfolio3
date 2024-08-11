@@ -1,80 +1,8 @@
 'use client';
 
 import React, { useState, useTransition } from 'react';
-import Image from 'next/image';
 import TabButton from './TabButton';
-
-const tabData = [
-	{
-		title: 'Skills',
-		id: 'skills',
-		content: (
-			<ul className='list-disc pl-4'>
-				<li>C++, Python</li>
-				<li>HTML, CSS, JavaScript, TypeScript</li>
-				<li>React.js, Next.js, Redux</li>
-				<li>Node.js, Express.js</li>
-				<li>MongoDB, Mongoose, Firebase</li>
-				<li>Git, GitHub</li>
-			</ul>
-		),
-	},
-	{
-		title: 'Education',
-		id: 'education',
-		content: (
-			<dl className='pl-4'>
-				<div className='flex flex-col'>
-					<dt className='list-item list-disc font-normal'>
-						B.Tech CSE (2020-2024)
-					</dt>
-					<div>
-						<dd>→ Sarala Birla University, Ranchi</dd>
-						<dd>→ CGPA: 8.05</dd>
-					</div>
-				</div>
-				<br />
-				<div className='flex flex-col'>
-					<dt className='list-item list-disc font-normal'>
-						Class XII (2018-2019)
-					</dt>
-					<div>
-						<dd>→ Heritage International School, Chianki</dd>
-						<dd>→ Percentage: 91.6%</dd>
-					</div>
-				</div>
-				<br />
-				<div className='flex flex-col'>
-					<dt className='list-item list-disc font-normal'>
-						Class X (2016-2017)
-					</dt>
-					<div>
-						<dd>→ Rotary School, Chainpur</dd>
-						<dd>→ CGPA: 10.0</dd>
-					</div>
-				</div>
-			</dl>
-		),
-	},
-
-	{
-		title: 'Experience',
-		id: 'experience',
-		content: (
-			<dl className='pl-4'>
-				<div className='flex flex-col'>
-					<dt className='list-item list-disc font-normal'>
-						Web Developer Intern (May 2024 - June 2024)
-					</dt>
-					<div>
-						<dd>→ VeriTech IT Software Services</dd>
-						<dd>→ Remote</dd>
-					</div>
-				</div>
-			</dl>
-		),
-	},
-];
+import { tabData } from '../assets';
 
 const AboutSection = () => {
 	const [tab, setTab] = useState('skills');

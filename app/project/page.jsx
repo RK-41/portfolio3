@@ -1,5 +1,11 @@
 'use client';
 import Link from 'next/link';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay, Scrollbar, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/scrollbar';
 import ProjectSlider from '../components/ProjectSlider';
 import { projectData } from '../assets';
 
@@ -28,24 +34,36 @@ const Project = ({ searchParams }) => {
 					Project {project.title}
 				</h2>
 
-				{/* Project Image */}
-				<div className='max-w-[640px] h-max max-h-[70vhs] aspect-auto m-auto rounded-xl shadow-xl shadow-black mb-8'>
-					<img
-						src={project.image}
-						alt={project.title}
-						className='w-full h-full object-contain rounded-xl'
-					/>
+				{/* Project Image Swiper-Slider */}
+				<div className='max-w-[640px] h-max max-h-[70vhs] aspect-auto m-auto rounded-xl shadow-xl shadow-black mb-8 bg-transparent'>
+					<Swiper
+						className='max-h-[460px] rounded-xl'
+						slidesPerView={1}
+						loop={true}
+						modules={[Autoplay, Navigation, Pagination]}
+						autoplay={{ pauseOnMouseEnter: true, delay: '3000' }}
+						navigation={{}}
+						pagination={{ clickable: true }}
+					>
+						{project.images.map((imgSrc, index) => {
+							return (
+								<SwiperSlide key={index}>
+									<img
+										src={imgSrc}
+										alt={project.title}
+										className='w-full h-full object-cover rounded-xl'
+									/>
+								</SwiperSlide>
+							);
+						})}
+					</Swiper>
 				</div>
 
 				{/* Project Details */}
 				<div className='h-max min-h-80 p-8 md:px-12 bg-[#181818] rounded-xl shadow-xl shadow-black font-light leading-relaxed'>
-					{/* <h2 className='text-3xl sm:text-4xl font-bold text-white mb-8 text-center'>
-						{project.title}
-					</h2> */}
-
 					<div className='mb-6'>
 						<h3 className='text-xl sm:text-2xl font-semibold mb-2'>
-							Project Description
+							Description
 						</h3>
 
 						<p className='text-[#ADB7BE] mb-6'>{project.description}</p>

@@ -60,7 +60,9 @@ const EmailSection = () => {
 			</div>
 
 			<div className='mb-4'>
-				<h2 className='text-4xl font-bold text-white mb-4'>Let's Connect</h2>
+				<h2 className='text-3xl sm:text-4xl font-bold text-white mb-4'>
+					Let's Connect
+				</h2>
 				<p className='text-[#ADB7BE] mb-4 max-w-md'>
 					I'm currently looking for new opportunities, my inbox is always open.
 					Whether you have a question or just want to say hi, I'll try my best

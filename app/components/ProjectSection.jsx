@@ -55,8 +55,8 @@ const projectData = [
 
 const ProjectSection = () => {
 	return (
-		<section id='projects' className='w-full'>
-			<h2 className='text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12'>
+		<section id='projects' className='w-full my-8'>
+			<h2 className='text-center text-3xl sm:text-4xl font-bold text-white m-8 md:mb-12'>
 				My Projects
 			</h2>
 
@@ -69,9 +69,9 @@ const ProjectSection = () => {
 			</div> */}
 
 			{/* slider */}
-			<div className='w-full lg:max-w-full xl:max-w-[1100px] cursor-pointer m-auto bg-transparent'>
+			<div className='w-full h-max lg:max-w-full xl:max-w-[1100px] py-2 cursor-pointer m-auto bg-transparent'>
 				<Swiper
-					className='w-[100%] h-[480px]'
+					className='h-[400px] md:h-[480px]'
 					slidesPerView={1}
 					breakpoints={{
 						440: {

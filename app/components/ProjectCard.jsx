@@ -5,7 +5,7 @@ import { FaLink } from 'react-icons/fa6';
 
 const ProjectCard = ({ project }) => {
 	return (
-		<div className='w-60 md:w-80 h-max shadow-lg shadow-black rounded-b-xl m-auto'>
+		<div className='w-60 md:w-80 shadow-lg shadow-black rounded-b-xl m-auto'>
 			<div
 				className='h-52 md:h-72 rounded-t-xl relative group'
 				style={{

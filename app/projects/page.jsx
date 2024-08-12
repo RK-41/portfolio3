@@ -32,9 +32,9 @@ const Projects = () => {
 				</h2>
 
 				{/* Project Image Swiper-Slider */}
-				<div className='max-w-[640px] h-max max-h-[70vhs] aspect-auto m-auto rounded-xl shadow-xl shadow-black mb-8 bg-transparent'>
+				<div className='max-w-[800px] h-max max-h-[70vhs] aspect-auto m-auto rounded-xl shadow-xl shadow-black mb-8 bg-transparent'>
 					<Swiper
-						className='max-h-[460px] rounded-xl'
+						className='max-h-[500px] rounded-xl'
 						slidesPerView={1}
 						loop={true}
 						modules={[Autoplay, Navigation, Pagination]}

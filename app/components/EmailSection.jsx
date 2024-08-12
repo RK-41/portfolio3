@@ -64,9 +64,9 @@ const EmailSection = () => {
 					Let's Connect
 				</h2>
 				<p className='text-[#ADB7BE] mb-4 max-w-md'>
-					I'm currently looking for new opportunities, my inbox is always open.
-					Whether you have a question or just want to say hi, I'll try my best
-					to get back to you as soon as possible!
+					I'm open to new opportunities and always eager to connect. Whether you
+					have a question or just want to say hello, feel free to reach out —
+					I&apos;ll do my best to respond promptly!
 				</p>
 
 				<div className='socials flex flex-row gap-2 text-3xl'>

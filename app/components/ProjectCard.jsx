@@ -3,21 +3,27 @@ import Link from 'next/link';
 import { FaGithub } from 'react-icons/fa';
 import { FaLink } from 'react-icons/fa6';
 
-const ProjectCard = ({ project, setProjectId }) => {
+const ProjectCard = ({ project, projectId, setProjectId }) => {
 	const handleClick = () => {
-		if (setProjectId) setProjectId(project.id);
+		if (setProjectId) {
+			setProjectId(project.id);
+			projectId = project.id;
+		}
 	};
+
+	const extraClasses = projectId
+		? projectId == project.id
+			? 'shadow-blue-800 cursor-pointer'
+			: 'shadow-black cursor-pointer'
+		: 'shadow-black';
+
 	return (
 		<div
-			className={
-				setProjectId
-					? 'w-60 md:w-80 shadow-lg shadow-black rounded-b-xl m-auto cursor-pointer'
-					: 'w-60 md:w-80 shadow-lg shadow-black rounded-b-xl m-auto'
-			}
+			className={`w-60 md:w-80 shadow-lg rounded-b-xl m-auto ${extraClasses}`}
 			onClick={handleClick}
 		>
 			<div
-				className='h-52 md:h-72 rounded-t-xl relative group'
+				className='h-44 md:h-60 rounded-t-xl relative group'
 				style={{
 					background: `url(${project.image})`,
 					backgroundSize: 'cover',

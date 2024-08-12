@@ -5,7 +5,7 @@ const Logo = () => {
 	return (
 		<Link href='/' className='text-xl md:text-5xl text-white font-semibold'>
 			<Image
-				src='/images/logo.svg'
+				src='./images/logo.svg'
 				width={54}
 				height={54}
 				priority

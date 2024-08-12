@@ -44,7 +44,7 @@ const HeroSection = () => {
 				<div className='col-span-5 place-self-center mt-4 lg:mt-0'>
 					<div className='rounded-full shadow-xl shadow-black w-[200px] h-[200px] md:w-[250px] md:h-[250px] lg:w-[350px] lg:h-[350px] relative'>
 						<Image
-							src='/images/RK.png'
+							src='./images/RK.png'
 							alt='dev image'
 							// className='absolute transform top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
 							width={400}

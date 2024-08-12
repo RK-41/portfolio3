@@ -26,7 +26,7 @@ const HeroSection = () => {
 						websites &amp; web-apps.
 					</p>
 
-					<div>
+					<div className='font-semibold'>
 						<button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-white hover:bg-slate-200 text-black'>
 							<Link href='#contact'>Hire Me</Link>
 						</button>

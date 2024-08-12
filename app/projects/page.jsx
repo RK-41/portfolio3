@@ -21,8 +21,8 @@ const Projects = () => {
 			</h2>
 
 			{/* Project Swiper-Slider */}
-			<div className='px-4 xl:px-16 mt-12'>
-				<ProjectSlider setProjectId={setProjectId} />
+			<div className='px-4 xl:px-16 mt-12 mb-8'>
+				<ProjectSlider projectId={projectId} setProjectId={setProjectId} />
 			</div>
 
 			{/* Project Details */}

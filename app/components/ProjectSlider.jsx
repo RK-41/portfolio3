@@ -16,11 +16,11 @@ import ProjectCard from '../components/ProjectCard';
 // data
 import { projectData } from '../assets';
 
-const ProjectSlider = ({ setProjectId }) => {
+const ProjectSlider = ({ projectId, setProjectId }) => {
 	return (
 		<div className='w-full h-max lg:max-w-full xl:max-w-[1100px] py-2 m-auto bg-transparent'>
 			<Swiper
-				className='h-[400px] md:h-[480px]'
+				className='h-[360px] md:h-[440px]'
 				slidesPerView={1}
 				breakpoints={{
 					440: {
@@ -61,6 +61,7 @@ const ProjectSlider = ({ setProjectId }) => {
 							<ProjectCard
 								key={project.id}
 								project={project}
+								projectId={projectId}
 								setProjectId={setProjectId}
 							/>
 						</SwiperSlide>

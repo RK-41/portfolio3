@@ -11,7 +11,7 @@ export const tabData = [
 		title: 'Skills',
 		id: 'skills',
 		content: (
-			<ul className='list-disc pl-4'>
+			<ul className='list-disc pl-4 font-medium hover:text-white'>
 				<li>C++, Python</li>
 				<li>HTML, CSS, JavaScript, TypeScript</li>
 				<li>React.js, Next.js, Redux</li>
@@ -26,8 +26,8 @@ export const tabData = [
 		id: 'education',
 		content: (
 			<dl className='pl-4'>
-				<div className='flex flex-col'>
-					<dt className='list-item list-disc font-normal'>
+				<div className='flex flex-col hover:text-white'>
+					<dt className='list-item list-disc font-medium'>
 						B.Tech CSE (2020-2024)
 					</dt>
 					<div>
@@ -36,8 +36,8 @@ export const tabData = [
 					</div>
 				</div>
 				<br />
-				<div className='flex flex-col'>
-					<dt className='list-item list-disc font-normal'>
+				<div className='flex flex-col hover:text-white'>
+					<dt className='list-item list-disc font-medium'>
 						Class XII (2018-2019)
 					</dt>
 					<div>
@@ -46,8 +46,8 @@ export const tabData = [
 					</div>
 				</div>
 				<br />
-				<div className='flex flex-col'>
-					<dt className='list-item list-disc font-normal'>
+				<div className='flex flex-col hover:text-white'>
+					<dt className='list-item list-disc font-medium'>
 						Class X (2016-2017)
 					</dt>
 					<div>
@@ -64,8 +64,8 @@ export const tabData = [
 		id: 'experience',
 		content: (
 			<dl className='pl-4'>
-				<div className='flex flex-col'>
-					<dt className='list-item list-disc font-normal'>
+				<div className='flex flex-col hover:text-white'>
+					<dt className='list-item list-disc font-medium'>
 						Web Developer Intern (May 2024 - June 2024)
 					</dt>
 					<div>
@@ -101,7 +101,7 @@ export const projectData = [
 	},
 	{
 		id: 4,
-		title: 'Cine Flix',
+		title: 'CineFlix',
 		description: 'Database for cinema related contents.',
 		features: [
 			'Integration of TMDB API, a comprehensive database of cinematic content.',
@@ -145,7 +145,7 @@ export const projectData = [
 	},
 	{
 		id: 2,
-		title: 'Dig IT',
+		title: 'Dig-IT',
 		description: 'Website for a digital service provider agency.',
 		features: [
 			'Meeting scheduling through Calendly.',

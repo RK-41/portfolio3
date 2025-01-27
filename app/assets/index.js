@@ -5,78 +5,105 @@ export const navLinkData = [
 	{ title: 'Contact', path: '/#contact' },
 ];
 
-// Tab Data
-export const tabData = [
+// Tab Content Data
+// Skills Data
+const skillsList = [
+	'C++, Python',
+	'HTML, CSS, JavaScript, TypeScript',
+	'React.js, Next.js, Redux, Remix',
+	'Node.js, Express.js',
+	'MongoDB, Mongoose, Firebase, GraphQL',
+	'Git, GitHub',
+	'Tailwind, Bootstrap',
+];
+
+// Education Data
+const educationData = [
 	{
+		title: 'B.Tech CSE (2020-2024)',
+		institution: 'Sarala Birla University, Ranchi',
+		score: 'CGPA: 8.05',
+	},
+	{
+		title: 'Class XII (2018-2019)',
+		institution: 'Heritage International School, Chianki',
+		score: 'Percentage: 91.6%',
+	},
+	{
+		title: 'Class X (2016-2017)',
+		institution: 'Rotary School, Chainpur',
+		score: 'CGPA: 10.0',
+	},
+];
+
+// Experience Data
+const experienceData = [
+  {
+    title: 'NextJS Developer Intern (Sep 2024 - Present)',
+    company: 'Debales AI',
+    location: 'Remote',
+  },
+	{
+		title: 'Web Developer Intern (May 2024 - June 2024)',
+		company: 'VeriTech IT Software Services',
+		location: 'Remote',
+	},
+];
+
+// Tab Data
+export const tabData = {
+	skills: {
 		title: 'Skills',
-		id: 'skills',
 		content: (
-			<ul className='list-disc pl-4 font-medium hover:text-white'>
-				<li>C++, Python</li>
-				<li>HTML, CSS, JavaScript, TypeScript</li>
-				<li>React.js, Next.js, Redux</li>
-				<li>Node.js, Express.js</li>
-				<li>MongoDB, Mongoose, Firebase</li>
-				<li>Git, GitHub</li>
+			<ul className='space-y-2 pl-6 font-medium'>
+				{skillsList.map((skill, index) => (
+					<li
+						key={index}
+						className='list-disc transition-colors duration-200 hover:text-white'
+					>
+						{skill}
+					</li>
+				))}
 			</ul>
 		),
 	},
-	{
+	education: {
 		title: 'Education',
-		id: 'education',
 		content: (
-			<dl className='pl-4'>
-				<div className='flex flex-col hover:text-white'>
-					<dt className='list-item list-disc font-medium'>
-						B.Tech CSE (2020-2024)
-					</dt>
-					<div>
-						<dd>→ Sarala Birla University, Ranchi</dd>
-						<dd>→ CGPA: 8.05</dd>
+			<dl className='space-y-6 pl-6'>
+				{educationData.map((edu, index) => (
+					<div key={index} className='group'>
+						<dt className='list-disc font-semibold transition-colors duration-200 group-hover:text-white'>
+							{edu.title}
+						</dt>
+						<div className='mt-1 space-y-1 pl-4 text-sm text-gray-300 transition-colors duration-200 group-hover:text-white'>
+							<dd>→ {edu.institution}</dd>
+							<dd>→ {edu.score}</dd>
+						</div>
 					</div>
-				</div>
-				<br />
-				<div className='flex flex-col hover:text-white'>
-					<dt className='list-item list-disc font-medium'>
-						Class XII (2018-2019)
-					</dt>
-					<div>
-						<dd>→ Heritage International School, Chianki</dd>
-						<dd>→ Percentage: 91.6%</dd>
-					</div>
-				</div>
-				<br />
-				<div className='flex flex-col hover:text-white'>
-					<dt className='list-item list-disc font-medium'>
-						Class X (2016-2017)
-					</dt>
-					<div>
-						<dd>→ Rotary School, Chainpur</dd>
-						<dd>→ CGPA: 10.0</dd>
-					</div>
-				</div>
+				))}
 			</dl>
 		),
 	},
-
-	{
+	experience: {
 		title: 'Experience',
-		id: 'experience',
 		content: (
-			<dl className='pl-4'>
-				<div className='flex flex-col hover:text-white'>
-					<dt className='list-item list-disc font-medium'>
-						Web Developer Intern (May 2024 - June 2024)
-					</dt>
-					<div>
-						<dd>→ VeriTech IT Software Services</dd>
-						<dd>→ Remote</dd>
+			<dl className='space-y-6 pl-6'>
+				{experienceData.map((exp, index) => (
+					<div key={index} className='group'>
+						<dt className='list-disc font-semibold transition-colors duration-200 group-hover:text-white'>
+							{exp.title}
+						</dt>
+						<div className='mt-1 space-y-1 pl-4 text-sm text-gray-300 transition-colors duration-200 group-hover:text-white'>
+							<dd>→ {exp.company}</dd>
+							<dd>→ {exp.location}</dd>
+						</div>
 					</div>
-				</div>
+				))}
 			</dl>
 		),
 	},
-];
+};
 
 // Project Data
 export const projectData = [

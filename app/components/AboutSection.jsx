@@ -47,7 +47,7 @@ const AboutSection = () => {
 				</div>
 
 				<div className='h-max min-h-80 p-4 xs:px-8 sm:px-12 mt-8 bg-[#181818] rounded-xl shadow-xl shadow-black text-[#ADB7BE] font-normal leading-relaxed'>
-					{tabData.find((t) => t.id === tab).content}
+					{tabData[tab].content}
 				</div>
 			</div>
 		</section>

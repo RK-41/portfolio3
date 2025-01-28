@@ -49,7 +49,7 @@ const ProjectCard = ({ project, projectId, setProjectId }) => {
 			</div>
 
 			{/* <Link href={`/project?=${project.id}`}> */}
-			<div className='h-40 text-white rounded-b-xl bg-[#181818] px-4 py-2 md:py-4'>
+			<div className='h-40 text-text-primary rounded-b-xl bg-card px-4 py-2 md:py-4'>
 				<h5 className='text-xl font-semibold mb-2'>{project.title}</h5>
 				<p className='text-[#ADB7BE] mb-2'>{project.description}</p>
 				<p className='text-[#ADB7BE] font-semibold'>🛠️: {project.techStack}</p>

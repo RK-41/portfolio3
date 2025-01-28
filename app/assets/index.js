@@ -38,11 +38,11 @@ const educationData = [
 
 // Experience Data
 const experienceData = [
-  {
-    title: 'NextJS Developer Intern (Sep 2024 - Present)',
-    company: 'Debales AI',
-    location: 'Remote',
-  },
+	{
+		title: 'NextJS Developer Intern (Sep 2024 - Present)',
+		company: 'Debales AI',
+		location: 'Remote',
+	},
 	{
 		title: 'Web Developer Intern (May 2024 - June 2024)',
 		company: 'VeriTech IT Software Services',
@@ -59,7 +59,7 @@ export const tabData = {
 				{skillsList.map((skill, index) => (
 					<li
 						key={index}
-						className='list-disc transition-colors duration-200 hover:text-white'
+						className='list-disc transition-colors duration-200 hover:text-primary'
 					>
 						{skill}
 					</li>
@@ -73,10 +73,10 @@ export const tabData = {
 			<dl className='space-y-6 pl-6'>
 				{educationData.map((edu, index) => (
 					<div key={index} className='group'>
-						<dt className='list-disc font-semibold transition-colors duration-200 group-hover:text-white'>
+						<dt className='list-disc font-semibold transition-colors duration-200 group-hover:text-primary'>
 							{edu.title}
 						</dt>
-						<div className='mt-1 space-y-1 pl-4 text-sm text-gray-300 transition-colors duration-200 group-hover:text-white'>
+						<div className='mt-1 space-y-1 pl-4 text-sm text-secondary transition-colors duration-200 group-hover:text-primary'>
 							<dd>→ {edu.institution}</dd>
 							<dd>→ {edu.score}</dd>
 						</div>
@@ -91,10 +91,10 @@ export const tabData = {
 			<dl className='space-y-6 pl-6'>
 				{experienceData.map((exp, index) => (
 					<div key={index} className='group'>
-						<dt className='list-disc font-semibold transition-colors duration-200 group-hover:text-white'>
+						<dt className='list-disc font-semibold transition-colors duration-200 group-hover:text-primary'>
 							{exp.title}
 						</dt>
-						<div className='mt-1 space-y-1 pl-4 text-sm text-gray-300 transition-colors duration-200 group-hover:text-white'>
+						<div className='mt-1 space-y-1 pl-4 text-sm text-secondary transition-colors duration-200 group-hover:text-primary'>
 							<dd>→ {exp.company}</dd>
 							<dd>→ {exp.location}</dd>
 						</div>

@@ -3,31 +3,87 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	/* Light theme colors */
+	--primary: #2563eb;
+	--primary-hover: #1d4ed8;
+	--background-primary: #ffffff;
+	--background-secondary: #f8fafc;
+	--text-primary: #0f172a;
+	--text-secondary: #475569;
+	--border-color: #e2e8f0;
+	--card-background: #ffffff;
+	--navbar-background: #ffffff;
+	--navbar-text: #0f172a;
+	--primary-text: #0f172a;
+	--secondary-text: #475569;
+	--input-bg: #ffffff;
+	--input-border: #e2e8f0;
+	--input-placeholder: #9ca3af;
+	--input-text: #0f172a;
+	--button-bg: #2563eb;
+	--button-hover: #1d4ed8;
+	--button-text: #ffffff;
+	--github-bg: #181717;
+	--github-hover: #121212;
+	--linkedin-bg: #0077b5;
+	--linkedin-hover: #005f91;
+	--leetcode-bg: #ffa116;
+	--leetcode-hover: #e69115;
+	--gfg-bg: #2f8d46;
+	--gfg-hover: #267a3e;
+	--discord-bg: #5865f2;
+	--discord-hover: #4752c4;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+[data-theme='dark'] {
+	/* Dark theme colors */
+	--primary: #3b82f6;
+	--primary-hover: #2563eb;
+	--background-primary: #121212;
+	--background-secondary: #181818;
+	--text-primary: #ffffff;
+	--text-secondary: #94a3b8;
+	--border-color: #333333;
+	--card-background: #1e1e1e;
+	--navbar-background: #121212;
+	--navbar-text: #ffffff;
+	--primary-text: #ffffff;
+	--secondary-text: #94a3b8;
+	--input-bg: #1e1e1e;
+	--input-border: #333333;
+	--input-placeholder: #6b7280;
+	--input-text: #ffffff;
+	--button-bg: #3b82f6;
+	--button-hover: #2563eb;
+	--button-text: #ffffff;
+	--github-bg: #181717;
+	--github-hover: #121212;
+	--linkedin-bg: #0077b5;
+	--linkedin-hover: #005f91;
+	--leetcode-bg: #ffa116;
+	--leetcode-hover: #e69115;
+	--gfg-bg: #2f8d46;
+	--gfg-hover: #267a3e;
+	--discord-bg: #5865f2;
+	--discord-hover: #4752c4;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	color: var(--text-primary);
+	background: var(--background-primary);
 }
 
+/* Utility classes */
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+	.text-balance {
+		text-wrap: balance;
+	}
+
+	.bg-gradient-custom {
+		background: linear-gradient(
+			to bottom,
+			transparent,
+			var(--background-secondary)
+		);
+	}
 }

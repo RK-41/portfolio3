@@ -15,8 +15,8 @@ const Projects = () => {
 	const project = projectData.find((p) => p.id == projectId);
 
 	return (
-		<section className='h-full px-8 pt-20 text-white bg-[#121212]'>
-			<h2 className='text-center text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-8'>
+		<section className='h-full px-8 pt-20 text-text-primary bg-bg-primary'>
+			<h2 className='text-center text-3xl sm:text-4xl font-bold text-text-primary mb-4 sm:mb-8'>
 				My Projects
 			</h2>
 
@@ -27,12 +27,12 @@ const Projects = () => {
 
 			{/* Project Details */}
 			<main className='pt-4 pb-8 md:pb-12 sm:px-4 xl:px-16'>
-				<h2 className='text-center text-3xl sm:text-4xl font-bold text-white mb-4 sm:mb-8'>
+				<h2 className='text-center text-3xl sm:text-4xl font-bold text-text-primary mb-4 sm:mb-8'>
 					Project {project.title}
 				</h2>
 
 				{/* Project Image Swiper-Slider */}
-				<div className='max-w-[770px] h-max max-h-[70vhs] aspect-auto m-auto rounded-xl shadow-xl shadow-black mb-8 bg-transparent'>
+				<div className='max-w-[770px] h-max max-h-[70vhs] aspect-auto m-auto rounded-xl shadow-xl shadow-black/25 mb-8 bg-transparent'>
 					<Swiper
 						className='max-h-[550px] rounded-xl'
 						slidesPerView={1}
@@ -57,39 +57,40 @@ const Projects = () => {
 				</div>
 
 				{/* Details */}
-				<div className='h-max min-h-80 p-8 md:px-12 bg-[#181818] rounded-xl shadow-xl shadow-black font-light leading-relaxed'>
+				<div className='h-max min-h-80 p-8 md:px-12 bg-bg-secondary rounded-xl shadow-xl shadow-black/25 font-light leading-relaxed'>
 					<div className='mb-6'>
-						<h3 className='text-xl sm:text-2xl font-semibold mb-2'>
+						<h3 className='text-xl sm:text-2xl font-semibold mb-2 text-text-primary'>
 							Description
 						</h3>
-
-						<p className='text-[#ADB7BE] mb-6'>{project.description}</p>
+						<p className='text-text-secondary mb-6'>{project.description}</p>
 					</div>
 
 					<div className='mb-6'>
-						<h3 className='text-xl sm:text-2xl font-semibold mb-2'>
+						<h3 className='text-xl sm:text-2xl font-semibold mb-2 text-text-primary'>
 							Tech Stack
 						</h3>
-						<p className='text-[#ADB7BE]'>{project.techStack}</p>
+						<p className='text-text-secondary'>{project.techStack}</p>
 					</div>
 
 					<div className='mb-6'>
-						<h3 className='text-xl sm:text-2xl font-semibold mb-2'>Features</h3>
-						<ul className='list-disc list-inside text-[#ADB7BE]'>
+						<h3 className='text-xl sm:text-2xl font-semibold mb-2 text-text-primary'>
+							Features
+						</h3>
+						<ul className='list-disc list-inside text-text-secondary'>
 							{project.features.map((feature, index) => (
 								<li key={index}>{feature}</li>
 							))}
 						</ul>
 					</div>
 
-					<div className='text-sm sm:text-lg flex gap-4 mt-8 font-semibold'>
+					<div className='text-sm sm:text-lg flex gap-6 mt-8 font-semibold'>
 						<Link href={project.link} target='_blank'>
-							<p className='bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded-lg'>
+							<p className='py-2 px-4 w-full sm:w-fit bg-gradient-to-r from-blue-600 to-blue-400 hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 text-white transition-all duration-300 rounded-lg'>
 								Live Demo
 							</p>
 						</Link>
 						<Link href={project.github} target='_blank'>
-							<p className='bg-gray-700 hover:bg-gray-800 py-2 px-4 rounded-lg'>
+							<p className='py-2 px-4 w-full sm:w-fit bg-transparent text-text-primary hover:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400 border border-blue-500 transition-[background] duration-300 rounded-lg'>
 								GitHub Repo
 							</p>
 						</Link>

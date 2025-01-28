@@ -1,11 +1,16 @@
 import React from 'react';
+import SocialLinks from './SocialLinks';
 
 const Footer = () => {
 	return (
-		<footer className='footer border border-t-[#33353F] border-l-transparent border-r-transparent text-white bg-[#121212]'>
-			<div className='container p-12 flex justify-center mx-auto'>
-				{/* <span>LOGO</span> */}
-				<p className='text-slate-600'>All rights reserved.</p>
+		<footer className='footer border border-t-default border-l-transparent border-r-transparent text-text-primary bg-bg-primary'>
+			<div className='container py-6 flex justify-center mx-auto'>
+				<div className='flex flex-col items-center justify-center gap-4'>
+					<SocialLinks className='text-2xl' />
+					<p className='text-secondary-text text-sm'>
+						© {new Date().getFullYear()} Rajan Kumar. All rights reserved.
+					</p>
+				</div>
 			</div>
 		</footer>
 	);

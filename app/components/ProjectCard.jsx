@@ -30,20 +30,20 @@ const ProjectCard = ({ project, projectId, setProjectId }) => {
 					backgroundPosition: 'center',
 				}}
 			>
-				<div className='overlay items-center justify-center gap-2 absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500'>
+				<div className='overlay items-center justify-center gap-2 absolute top-0 left-0 w-full h-full bg-background bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500'>
 					<Link
 						href={project.link}
 						target='_blank'
-						className='h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link'
+						className='h-14 w-14 border-2 relative rounded-full border-text-secondary hover:border-text-primary group/link'
 					>
-						<FaLink className='h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white' />
+						<FaLink className='h-10 w-10 text-text-secondary absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-text-primary' />
 					</Link>
 					<Link
 						href={project.github}
 						target='_blank'
-						className='h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link'
+						className='h-14 w-14 border-2 relative rounded-full border-text-secondary hover:border-text-primary group/link'
 					>
-						<FaGithub className='h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-white' />
+						<FaGithub className='h-10 w-10 text-text-secondary absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group-hover/link:text-text-primary' />
 					</Link>
 				</div>
 			</div>
@@ -51,8 +51,10 @@ const ProjectCard = ({ project, projectId, setProjectId }) => {
 			{/* <Link href={`/project?=${project.id}`}> */}
 			<div className='h-40 text-text-primary rounded-b-xl bg-card px-4 py-2 md:py-4'>
 				<h5 className='text-xl font-semibold mb-2'>{project.title}</h5>
-				<p className='text-[#ADB7BE] mb-2'>{project.description}</p>
-				<p className='text-[#ADB7BE] font-semibold'>🛠️: {project.techStack}</p>
+				<p className='text-text-secondary mb-2'>{project.description}</p>
+				<p className='text-text-secondary font-semibold'>
+					🛠️: {project.techStack}
+				</p>
 			</div>
 			{/* </Link> */}
 		</div>

@@ -28,9 +28,9 @@ const Navbar = () => {
 							aria-label='Toggle theme'
 						>
 							{theme === 'dark' ? (
-								<SunIcon className='h-6 w-6' />
+								<SunIcon className='h-5 w-5' />
 							) : (
-								<MoonIcon className='h-6 w-6' />
+								<MoonIcon className='h-5 w-5' />
 							)}
 						</button>
 						{navbarOpen ? (
@@ -60,9 +60,9 @@ const Navbar = () => {
 							aria-label='Toggle theme'
 						>
 							{theme === 'dark' ? (
-								<SunIcon className='h-6 w-6' />
+								<SunIcon className='h-5 w-5' />
 							) : (
-								<MoonIcon className='h-6 w-6' />
+								<MoonIcon className='h-5 w-5' />
 							)}
 						</button>
 

@@ -8,7 +8,7 @@ const Footer = () => {
 				<div className='flex flex-col items-center justify-center gap-4'>
 					<SocialLinks className='text-2xl' />
 					<p className='text-secondary-text text-sm'>
-						© {new Date().getFullYear()} Rajan Kumar. All rights reserved.
+						Rajan Kumar © {new Date().getFullYear()}
 					</p>
 				</div>
 			</div>

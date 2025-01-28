@@ -11,9 +11,11 @@ import {
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SocialLinks from './SocialLinks';
+import { useTheme } from './ThemeProvider';
 
 const EmailSection = () => {
 	const [loading, setLoading] = useState(false);
+	const { theme } = useTheme();
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
@@ -63,7 +65,7 @@ const EmailSection = () => {
 					pauseOnFocusLoss
 					draggable
 					pauseOnHover
-					theme='dark'
+					theme={theme === 'dark' ? 'dark' : 'light'}
 				/>
 			</div>
 

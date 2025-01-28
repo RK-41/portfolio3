@@ -19,7 +19,7 @@ const ProjectCard = ({ project, projectId, setProjectId }) => {
 
 	return (
 		<div
-			className={`w-60 md:w-80 shadow-lg rounded-b-xl m-auto ${extraClasses}`}
+			className={`w-60 md:w-80 shadow-lg rounded-xl m-auto ${extraClasses}`}
 			onClick={handleClick}
 		>
 			<div
@@ -30,7 +30,7 @@ const ProjectCard = ({ project, projectId, setProjectId }) => {
 					backgroundPosition: 'center',
 				}}
 			>
-				<div className='overlay items-center justify-center gap-2 absolute top-0 left-0 w-full h-full bg-background bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500'>
+				<div className='overlay items-center justify-center gap-2 absolute top-0 left-0 w-full h-full opacity-0 hidden group-hover:flex group-hover:opacity-80 transition-all duration-500 bg-background'>
 					<Link
 						href={project.link}
 						target='_blank'

@@ -37,6 +37,11 @@ module.exports = {
 				'gfg-hover': 'var(--gfg-hover)',
 				discord: 'var(--discord-bg)',
 				'discord-hover': 'var(--discord-hover)',
+				github: 'var(--github-bg)',
+				'github-hover': 'var(--github-hover)',
+				linkedin: 'var(--linkedin-bg)',
+				'linkedin-hover': 'var(--linkedin-hover)',
+				background: 'var(--background-primary)',
 			},
 			backgroundColor: {
 				card: 'var(--card-background)',

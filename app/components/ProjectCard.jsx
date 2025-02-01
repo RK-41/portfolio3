@@ -30,7 +30,7 @@ const ProjectCard = ({ project, projectId, setProjectId }) => {
 					backgroundPosition: 'center',
 				}}
 			>
-				<div className='overlay items-center justify-center gap-2 absolute top-0 left-0 w-full h-full opacity-0 hidden group-hover:flex group-hover:opacity-80 transition-all duration-500 bg-background'>
+				<div className='overlay items-center justify-center gap-2 absolute top-0 left-0 w-full h-full opacity-0 invisible group-hover:visible group-hover:flex group-hover:opacity-80 transition-all duration-500 bg-background flex'>
 					<Link
 						href={project.link}
 						target='_blank'
@@ -49,9 +49,11 @@ const ProjectCard = ({ project, projectId, setProjectId }) => {
 			</div>
 
 			{/* <Link href={`/project?=${project.id}`}> */}
-			<div className='h-40 text-text-primary rounded-b-xl bg-card px-4 py-2 md:py-4'>
-				<h5 className='text-xl font-semibold mb-2'>{project.title}</h5>
-				<p className='text-text-secondary mb-2'>{project.description}</p>
+			<div className='h-40 text-text-primary rounded-b-xl bg-card px-4 py-2 md:py-4 flex flex-col justify-between'>
+				<div>
+					<h5 className='text-xl font-semibold mb-2'>{project.title}</h5>
+					<p className='text-text-secondary mb-2'>{project.description}</p>
+				</div>
 				<p className='text-text-secondary font-semibold'>
 					🛠️: {project.techStack}
 				</p>

@@ -219,7 +219,7 @@ export const projectData = [
 			'/images/projects/shopWay6.png',
 			'/images/projects/shopWay7.png',
 		],
-		techStack: 'MERN, Bootstrap',
+		techStack: 'MERN, Redux, Bootstrap',
 		link: 'https://shopway-aw74.onrender.com/',
 		github: 'https://github.com/RK-41/shopway',
 	},

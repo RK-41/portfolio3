@@ -55,7 +55,7 @@ const HeroSection = () => {
 					</button>
 					<button className='px-6 py-3 w-full sm:w-fit rounded-full bg-transparent text-text-primary hover:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400 border border-blue-500 mt-3 md:mt-0 transition-[background] duration-300'>
 						<Link
-							href='https://drive.google.com/file/d/1qtV4FqkmGxDZirVo9joVrdKnyHPW198u/view?usp=sharing'
+							href='https://drive.google.com/file/d/1sX59s7G4Ze_z9gLcpa7A3tZS-sxc07J_/view?usp=sharing'
 							target='_blank'
 						>
 							View Resume

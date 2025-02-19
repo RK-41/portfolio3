@@ -9,11 +9,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import ProjectSlider from '../components/ProjectSlider';
 import { projectData } from '../assets';
-import { useSearchParams } from 'next/navigation';
 
 const Projects = () => {
-	const searchParams = useSearchParams();
-	const [projectId, setProjectId] = useState(searchParams.get('id') || '6');
+	const [projectId, setProjectId] = useState('6');
 	const project = projectData.find((p) => p.id == projectId);
 
 	return (

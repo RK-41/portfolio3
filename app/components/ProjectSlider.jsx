@@ -20,7 +20,7 @@ const ProjectSlider = ({ projectId, setProjectId }) => {
 	return (
 		<div className='w-full h-max lg:max-w-full xl:max-w-[1100px] py-2 m-auto bg-transparent'>
 			<Swiper
-				className='h-[360px] md:h-[440px]'
+				className='h-[400px] md:h-[440px]'
 				slidesPerView={1}
 				breakpoints={{
 					440: {

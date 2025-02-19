@@ -48,17 +48,17 @@ const ProjectCard = ({ project, projectId, setProjectId }) => {
 				</div>
 			</div>
 
-			{/* <Link href={`/project?=${project.id}`}> */}
-			<div className='h-40 text-text-primary rounded-b-xl bg-card px-4 py-2 md:py-4 flex flex-col justify-between'>
-				<div>
-					<h5 className='text-xl font-semibold mb-2'>{project.title}</h5>
-					<p className='text-text-secondary mb-2'>{project.description}</p>
+			<Link href={`/projects/${project.id}`}>
+				<div className='h-40 text-text-primary rounded-b-xl bg-card px-4 py-2 md:py-4 flex flex-col justify-between cursor-pointer'>
+					<div>
+						<h5 className='text-xl font-semibold mb-2'>{project.title}</h5>
+						<p className='text-text-secondary mb-2'>{project.description}</p>
+					</div>
+					<p className='text-text-secondary font-semibold'>
+						🛠️: {project.techStack}
+					</p>
 				</div>
-				<p className='text-text-secondary font-semibold'>
-					🛠️: {project.techStack}
-				</p>
-			</div>
-			{/* </Link> */}
+			</Link>
 		</div>
 	);
 };

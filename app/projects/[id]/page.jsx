@@ -1,0 +1,101 @@
+'use client';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay, Navigation } from 'swiper/modules';
+import Link from 'next/link';
+import { projectData } from '../../assets';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/scrollbar';
+import ProjectSlider from '../../components/ProjectSlider';
+const ProjectPage = ({ params }) => {
+	const project = projectData.find((p) => p.id == params.id);
+
+	if (!project) {
+		return (
+			<div className='h-screen flex items-center justify-center'>
+				<p className='text-xl'>Project not found</p>
+			</div>
+		);
+	}
+
+	return (
+		<section className='h-full px-8 pt-20 text-text-primary bg-bg-primary'>
+			{/* Project Details */}
+			<h2 className='text-center text-3xl sm:text-4xl font-bold text-text-primary mb-4 sm:mb-8'>
+				Project {project.title}
+			</h2>
+
+			{/* Project Image Swiper-Slider */}
+			<div className='max-w-[770px] h-max max-h-[70vhs] aspect-auto m-auto rounded-xl shadow-xl shadow-black/25 mb-8 bg-transparent'>
+				<Swiper
+					className='max-h-[550px] rounded-xl'
+					slidesPerView={1}
+					loop={true}
+					modules={[Autoplay, Navigation, Pagination]}
+					autoplay={{ pauseOnMouseEnter: true, delay: '3000' }}
+					navigation={{}}
+					pagination={{ clickable: true }}
+				>
+					{project.images.map((imgSrc, index) => (
+						<SwiperSlide key={index}>
+							<img
+								src={imgSrc}
+								alt={project.title}
+								className='w-full h-full object-cover rounded-xl'
+							/>
+						</SwiperSlide>
+					))}
+				</Swiper>
+			</div>
+
+			{/* Details */}
+			<div className='h-max min-h-80 p-8 md:px-12 bg-bg-secondary rounded-xl shadow-xl shadow-black/25 font-light leading-relaxed'>
+				<div className='mb-6'>
+					<h3 className='text-xl sm:text-2xl font-semibold mb-2 text-text-primary'>
+						Description
+					</h3>
+					<p className='text-text-secondary mb-6'>{project.description}</p>
+				</div>
+
+				<div className='mb-6'>
+					<h3 className='text-xl sm:text-2xl font-semibold mb-2 text-text-primary'>
+						Tech Stack
+					</h3>
+					<p className='text-text-secondary'>{project.techStack}</p>
+				</div>
+
+				<div className='mb-6'>
+					<h3 className='text-xl sm:text-2xl font-semibold mb-2 text-text-primary'>
+						Features
+					</h3>
+					<ul className='list-disc list-inside text-text-secondary'>
+						{project.features.map((feature, index) => (
+							<li key={index}>{feature}</li>
+						))}
+					</ul>
+				</div>
+
+				<div className='text-sm sm:text-lg flex gap-6 mt-8 font-semibold'>
+					<Link href={project.link} target='_blank'>
+						<p className='py-2 px-4 w-full sm:w-fit bg-gradient-to-r from-blue-600 to-blue-400 hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 text-white transition-all duration-300 rounded-lg'>
+							Live Demo
+						</p>
+					</Link>
+					<Link href={project.github} target='_blank'>
+						<p className='py-2 px-4 w-full sm:w-fit bg-transparent text-text-primary hover:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400 border border-blue-500 transition-[background] duration-300 rounded-lg'>
+							GitHub Repo
+						</p>
+					</Link>
+				</div>
+			</div>
+
+			{/* Project Swiper-Slider */}
+			<div className='px-4 xl:px-16 mt-12 mb-8'>
+				<ProjectSlider />
+			</div>
+		</section>
+	);
+};
+
+export default ProjectPage;

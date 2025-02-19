@@ -11,7 +11,7 @@ import ProjectSlider from '../components/ProjectSlider';
 import { projectData } from '../assets';
 
 const Projects = () => {
-	const [projectId, setProjectId] = useState('1');
+	const [projectId, setProjectId] = useState('6');
 	const project = projectData.find((p) => p.id == projectId);
 
 	return (

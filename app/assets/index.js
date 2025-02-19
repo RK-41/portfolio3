@@ -108,6 +108,34 @@ export const tabData = {
 // Project Data
 export const projectData = [
 	{
+		id: 6,
+		title: 'Evento',
+		description: 'A real-time event management platform.',
+		features: [
+			'Create and manage events with detailed information',
+			'Real-time participant updates and live event status tracking',
+			'Dynamic event categorization and filtering based on category/status',
+			'User authentication with profile management and event history',
+			'Image upload support via Cloudinary',
+			'Push notifications for event updates',
+			'Responsive design optimized for all devices',
+			'Edit Profile functionality (for registered users)',
+			'Guest access with limited features',
+		],
+		image: '/images/projects/evento1.png',
+		images: [
+			'/images/projects/evento1.png',
+			'/images/projects/evento2.png',
+			'/images/projects/evento3.png',
+			'/images/projects/evento4.png',
+			'/images/projects/evento5.png',
+			'/images/projects/evento6.png',
+		],
+		techStack: 'MERN, Socket.IO, Cloudinary, JWT, Framer Motion, Tailwind',
+		link: 'https://evento-olive.vercel.app/',
+		github: 'https://github.com/RK-41/evento',
+	},
+	{
 		id: 5,
 		title: 'Task Manager',
 		description: 'A web app to keep track of various tasks.',

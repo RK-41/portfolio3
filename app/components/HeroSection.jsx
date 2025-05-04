@@ -15,7 +15,7 @@ const HeroSection = () => {
             </span>
             <br />
             <TypeAnimation
-              sequence={['Rajan Kumar', 2000, 'Web Developer', 2000]}
+              sequence={['Rajan Kumar', 2000, 'A Developer', 2000]}
               wrapper='span'
               speed={10}
               style={{
@@ -55,7 +55,7 @@ const HeroSection = () => {
           </button>
           <button className='px-6 py-3 w-full sm:w-fit rounded-full bg-transparent text-text-primary hover:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400 border border-blue-500 mt-3 md:mt-0 transition-[background] duration-300'>
             <Link
-              href='https://drive.google.com/file/d/1r2cp7W_69szkeNYWn0v6Hc4q0uzVK_Av/view?usp=sharing'
+              href='https://drive.google.com/file/d/1IXxfyzrm3QR5Zkn0wYeJ8MOCArQSYoP0/view?usp=sharing'
               target='_blank'
             >
               View Resume

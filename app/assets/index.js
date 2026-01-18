@@ -10,7 +10,7 @@ export const navLinkData = [
 // Tab Content Data
 // Skills Data
 const skillsList = [
-  'C++, Python',
+  'C, C++, Python, Java',
   'HTML, CSS, JavaScript, TypeScript',
   'React.js, Next.js, Remix, React Native, Redux',
   'Node.js, Express.js',
@@ -41,7 +41,7 @@ const educationData = [
 // Experience Data
 const experienceData = [
   {
-    title: 'Frontend Developer Intern (Apr 2025 - Present)',
+    title: 'Frontend Developer (Apr 2025 - Present)',
     company: 'RSVR Technologies',
     location: 'Remote',
     link: 'https://www.rsvrtech.com',
@@ -61,52 +61,130 @@ export const tabData = {
   skills: {
     title: 'Skills',
     content: (
-      <ul className='space-y-2 pl-6 font-medium'>
-        {skillsList.map((skill, index) => (
-          <li
-            key={index}
-            className='list-disc transition-colors duration-200 hover:text-primary'
-          >
-            {skill}
-          </li>
-        ))}
-      </ul>
+      <div className='grid gap-2 sm:gap-4'>
+        <div className='flex items-center gap-3 mb-4'>
+          <div className='w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center'>
+            <span className='text-white text-sm font-bold'>💻</span>
+          </div>
+          <h3 className='text-xl font-semibold text-text-primary'>Technical Skills</h3>
+        </div>
+        <div className='grid lg:grid-cols-2 gap-3'>
+          {skillsList.map((skill, index) => (
+            <div
+              key={index}
+              className='group relative bg-gradient-to-r from-card to-transparent border border-gray-200 dark:border-gray-700 rounded-lg p-4 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:scale-[1.01] hover:border-primary/30'
+            >
+              <div className='flex items-center gap-3'>
+                <div className='w-2 h-2 bg-primary rounded-full group-hover:scale-115 transition-transform duration-200'></div>
+                <span className='font-medium text-text-secondary group-hover:text-primary transition-colors duration-200'>
+                  {skill}
+                </span>
+              </div>
+              <div className='absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg'></div>
+            </div>
+          ))}
+        </div>
+      </div>
     ),
   },
   education: {
     title: 'Education',
     content: (
-      <dl className='space-y-6 pl-6'>
-        {educationData.map((edu, index) => (
-          <div key={index} className='group'>
-            <dt className='list-disc font-semibold transition-colors duration-200 group-hover:text-primary'>
-              {edu.title}
-            </dt>
-            <div className='mt-1 space-y-1 pl-4 text-sm text-secondary transition-colors duration-200 group-hover:text-primary'>
-              <dd>→ {edu.institution}</dd>
-              <dd>→ {edu.score}</dd>
-            </div>
+      <div className='space-y-6'>
+        <div className='flex items-center gap-3 mb-6'>
+          <div className='w-8 h-8 bg-gradient-to-r from-green-500 to-teal-600 rounded-lg flex items-center justify-center'>
+            <span className='text-white text-sm font-bold'>🎓</span>
           </div>
-        ))}
-      </dl>
+          <h3 className='text-xl font-semibold text-text-primary'>Educational Background</h3>
+        </div>
+        <div className='relative'>
+          {/* Timeline line */}
+          <div className='absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent'></div>
+          
+          {educationData.map((edu, index) => (
+            <div key={index} className='relative flex gap-2 sm:gap-4 md:gap-6 pb-4 last:pb-0 group'>
+              {/* Timeline dot */}
+              <div className='relative z-10 w-12 h-12 bg-card border-4 border-primary rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-200 shadow-lg'>
+                <div className='w-3 h-3 bg-primary rounded-full group-hover:bg-white transition-colors duration-200'></div>
+              </div>
+              
+              {/* Content card */}
+              <div className='flex-1 bg-gradient-to-br from-card to-card/80 border border-gray-200 dark:border-gray-700 rounded-xl p-6 group-hover:shadow-xl group-hover:shadow-primary/10 transition-all duration-300 group-hover:scale-[1.01] group-hover:border-primary/30'>
+                <h4 className='text-lg font-bold text-text-primary mb-2 group-hover:text-primary transition-colors duration-200'>
+                  {edu.title}
+                </h4>
+                <div className='space-y-2'>
+                  <div className='flex items-center gap-2 text-text-secondary'>
+                    <span className='w-1.5 h-1.5 bg-primary rounded-full'></span>
+                    <span className='font-medium'>{edu.institution}</span>
+                  </div>
+                  <div className='flex items-center gap-2 text-text-secondary'>
+                    <span className='w-1.5 h-1.5 bg-green-500 rounded-full'></span>
+                    <span className='font-semibold text-green-600 dark:text-green-400'>{edu.score}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     ),
   },
   experience: {
     title: 'Experience',
     content: (
-      <dl className='space-y-6 pl-6'>
-        {experienceData.map((exp, index) => (
-          <div key={index} className='group'>
-            <dt className='list-disc font-semibold transition-colors duration-200 group-hover:text-primary'>
-              {exp.title}
-            </dt>
-            <div className='mt-1 space-y-1 pl-4 text-sm text-secondary transition-colors duration-200 group-hover:text-primary'>
-              <dd>→ <Link href={exp.link} target="_blank">{exp.company}</Link></dd>
-              <dd>→ {exp.location}</dd>
-            </div>
+      <div className='space-y-6'>
+        <div className='flex items-center gap-3 mb-6'>
+          <div className='w-8 h-8 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center'>
+            <span className='text-white text-sm font-bold'>💼</span>
           </div>
-        ))}
-      </dl>
+          <h3 className='text-xl font-semibold text-text-primary'>Professional Experience</h3>
+        </div>
+        <div className='relative'>
+          {/* Timeline line */}
+          <div className='absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-transparent'></div>
+          
+          {experienceData.map((exp, index) => (
+            <div key={index} className='relative flex gap-2 sm:gap-4 md:gap-6 pb-4 last:pb-0 group'>
+              {/* Timeline dot */}
+              <div className='relative z-10 w-12 h-12 bg-card border-4 border-primary rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-200 shadow-lg'>
+                <div className='w-3 h-3 bg-primary rounded-full group-hover:bg-white transition-colors duration-200'></div>
+              </div>
+              
+              {/* Content card */}
+              <div className='flex-1 bg-gradient-to-br from-card to-card/80 border border-gray-200 dark:border-gray-700 rounded-xl p-6 group-hover:shadow-xl group-hover:shadow-primary/10 transition-all duration-300 group-hover:scale-[1.01] group-hover:border-primary/30'>
+                <h4 className='text-lg font-bold text-text-primary mb-3 group-hover:text-primary transition-colors duration-200'>
+                  {exp.title}
+                </h4>
+                <div className='space-y-3'>
+                  <div className='flex items-center gap-2'>
+                    <span className='w-1.5 h-1.5 bg-primary rounded-full'></span>
+                    <Link 
+                      href={exp.link} 
+                      className="font-medium text-blue-600 dark:text-blue-400 hover:text-primary hover:underline transition-colors duration-200 flex items-center gap-1" 
+                      target="_blank"
+                    >
+                      {exp.company}
+                      <svg className='w-3 h-3' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                        <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14' />
+                      </svg>
+                    </Link>
+                  </div>
+                  <div className='flex items-center gap-2 text-text-secondary'>
+                    <span className='w-1.5 h-1.5 bg-green-500 rounded-full'></span>
+                    <span className='font-medium'>{exp.location}</span>
+                  </div>
+                  {index === 0 && (
+                    <div className='mt-3 px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-medium rounded-full inline-block'>
+                      Current Position
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     ),
   },
 };

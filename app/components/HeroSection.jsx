@@ -5,6 +5,7 @@ import Link from 'next/link';
 import SocialLinks from './SocialLinks';
 
 const HeroSection = () => {
+  const resumeLink = process.env.NEXT_PUBLIC_RESUME_LINK || 'https://drive.google.com/file/d/1kBqLbqXDcl31eaFmqAuQyATwC4luAqw0/view?usp=sharing';
   return (
     <section className='min-h-[calc(100vh-80px)]'>
       <div className='grid grid-cols-1 md:grid-cols-12 mt-16'>
@@ -53,14 +54,14 @@ const HeroSection = () => {
           <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-r from-blue-600 to-blue-400 hover:bg-gradient-to-r hover:from-blue-700 hover:to-blue-500 text-white transition-all duration-300'>
             <Link href='#contact'>Hire Me</Link>
           </button>
-          <button className='px-6 py-3 w-full sm:w-fit rounded-full bg-transparent text-text-primary hover:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400 border border-blue-500 mt-3 md:mt-0 transition-[background] duration-300'>
+          {resumeLink && <button className='px-6 py-3 w-full sm:w-fit rounded-full bg-transparent text-text-primary hover:text-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-400 border border-blue-500 mt-3 md:mt-0 transition-[background] duration-300'>
             <Link
-              href='https://drive.google.com/file/d/1IXxfyzrm3QR5Zkn0wYeJ8MOCArQSYoP0/view?usp=sharing'
+              href={resumeLink}
               target='_blank'
             >
               View Resume
             </Link>
-          </button>
+          </button>}
         </div>
         <SocialLinks className='mt-2 sm:mt-4 justify-center sm:justify-start' />
       </div>
